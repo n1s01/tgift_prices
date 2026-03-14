@@ -1,14 +1,18 @@
-# Getting Started
+# Getting Started (Alpha)
+
+> **Note:** These are instructions for the very first alpha versions of the tool. The API and usage might change in the future.
 
 ## Install dependency
 
-The project uses `curl_cffi` for HTTP requests.
+The project uses `curl_cffi` for HTTP requests to bypass some protections.
 
 ```bash
 pip install curl_cffi
 ```
 
-## Import the public API
+## Import the current functions
+
+Currently, the tool only exposes these internal functions:
 
 ```python
 from tgift_prices import get_floor, search_gifts, available_gifts
