@@ -1,4 +1,6 @@
-# API Reference
+# API Reference (Draft)
+
+> **⚠️ Disclaimer:** These are the initial functions of an early-stage project. The signatures and return types are subject to change without notice in future versions.
 
 ## `get_floor`
 
