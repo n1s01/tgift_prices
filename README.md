@@ -1,112 +1,44 @@
 # tgift_prices
 
-`tgift_prices` is a small Python library for getting Telegram gift floor prices.
+Small Python library for fetching Telegram gift floor prices across multiple marketplaces.
 
-## Install
+## Documentation
+
+Project documentation is prepared for MkDocs Material and GitHub Pages.
+
+- Local docs source: [`docs/`](docs/)
+- MkDocs config: [`mkdocs.yml`](mkdocs.yml)
+- GitHub Pages workflow: [`.github/workflows/gh-pages.yml`](.github/workflows/gh-pages.yml)
+
+## Quick Start
+
+Install dependency:
 
 ```bash
 pip install curl_cffi
 ```
 
-## Import
+Basic usage:
 
 ```python
 from tgift_prices import get_floor, search_gifts, available_gifts
-```
 
-## How to use
-
-### Get floor for one gift
-
-```python
-from tgift_prices import get_floor
-
-result = get_floor("<gift_name>", ["<market>", "<market>"])
+result = get_floor("Heart Locket")
 print(result)
 ```
 
-Return format:
+## Run Docs Locally
 
-```python
-{
-    '<gift_name>': {
-        'floor': float | None,
-        'value': str,
-        'marketplace': str | None
-    }
-}
+```bash
+pip install mkdocs-material
+mkdocs serve
 ```
 
-### Get floor for multiple gifts
+## Publish to GitHub Pages
 
-```python
-from tgift_prices import get_floor
+1. Push the repository to GitHub.
+2. In repository settings, open `Pages`.
+3. Set source to `GitHub Actions`.
+4. Push to `main` or run the docs workflow manually.
 
-result = get_floor(["<gift_name>", "<gift_name>"], ["<market>", "<market>"])
-print(result)
-```
-
-Return format:
-
-```python
-{
-    '<gift_name>': {
-        'floor': float | None,
-        'value': str,
-        'marketplace': str | None
-    },
-    '<gift_name>': {
-        'floor': float | None,
-        'value': str,
-        'marketplace': str | None
-    }
-}
-```
-
-### Use default markets
-
-```python
-from tgift_prices import get_floor
-
-result = get_floor("<gift_name>")
-print(result)
-```
-
-If `markets` is not passed, the library uses default markets.
-
-### Search gifts
-
-```python
-from tgift_prices import search_gifts
-
-result = search_gifts("<query>")
-print(result)
-```
-
-Return format:
-
-```python
-['<gift_name>', '<gift_name>']
-```
-
-### Get all available gifts
-
-```python
-from tgift_prices import available_gifts
-
-result = available_gifts()
-print(result)
-```
-
-Return format:
-
-```python
-['<gift_name>', '<gift_name>']
-```
-
-## Notes
-
-- `gift` can be a string or a list of strings.
-- `markets` must be a list of marketplace names.
-- If a gift is not found in the internal gift list, the library raises `ValueError`.
-- If no listing is found, `floor` and `marketplace` return `None`.
+The workflow builds the MkDocs Material site and publishes it automatically.
