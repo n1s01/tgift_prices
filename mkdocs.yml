@@ -48,3 +48,13 @@ extra_css:
 
 plugins:
   - search
+  - i18n:
+      default_language: en
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+        - locale: ru
+          name: Русский
+          build: true

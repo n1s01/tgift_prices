@@ -1,6 +1,8 @@
 # tgift_prices
 
-Small Python library for fetching Telegram gift floor prices across multiple marketplaces.
+> Fast access to Telegram gift floor prices from multiple marketplaces.
+
+[**📖 Read the Documentation here**](https://n1s01.github.io/tgift_prices/)
 
 ## Documentation
 
