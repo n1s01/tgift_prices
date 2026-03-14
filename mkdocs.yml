@@ -1,4 +1,5 @@
 site_name: tgift_prices
+site_url: https://n1s01.github.io/tgift_prices/
 site_description: Python library for Telegram gift floor prices
 repo_name: tgift_prices
 theme:
